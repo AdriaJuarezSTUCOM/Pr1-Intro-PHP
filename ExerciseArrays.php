@@ -87,3 +87,22 @@ foreach ($notas as $estudiante => $nota) {
 }
 
 echo"<br><br>";
+
+echo"7) Calcula la media de las notas y muéstrala con solo 2 decimales.<br> Además, muestra los 
+nombres de los alumnos cuya nota esté por encima de la media.<br><br> ";
+
+$aux = 0;
+
+foreach ($notas as $estudiante => $nota) {
+    $aux += $nota;
+}
+
+$media = round($aux/sizeof($notas), 2);
+
+echo"Media de las notas: $media<br>";
+
+$estudiantesPorEncima;
+
+foreach ($notas as $estudiante => $nota) {
+    if($nota>$media) array_push($estudiantesPorEncima, $estudiante);
+}
