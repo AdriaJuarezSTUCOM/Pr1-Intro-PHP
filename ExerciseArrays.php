@@ -101,8 +101,32 @@ $media = round($aux/sizeof($notas), 2);
 
 echo"Media de las notas: $media<br>";
 
-$estudiantesPorEncima;
+$estudiantesPorEncima = array();;
 
 foreach ($notas as $estudiante => $nota) {
     if($nota>$media) array_push($estudiantesPorEncima, $estudiante);
 }
+
+echo"Alumnos con nota por encima de la media:<br>";
+foreach ($estudiantesPorEncima as $estudiante) {
+    echo "$estudiante<br>";
+}
+
+echo"<br>";
+
+echo"8) Busca en el array la nota más alta (debe hacerse mediante código). Muestra la nota y 
+el nombre del mejor alumno de la clase. Deberá funcionar para cualquier valor del 
+array. <br><br>";
+
+
+$mejorNota = -1;
+$mejorEstudiante = "";
+
+foreach ($notas as $estudiante => $nota) {
+    if ($nota > $mejorNota) {
+        $mejorNota = $nota;
+        $mejorEstudiante = $estudiante;
+    }
+}
+
+echo "La nota más alta es $mejorNota y el mejor alumno es $mejorEstudiante<br>";
